@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Chessboard Layout</title>
+   
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Chessboard</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#rules">Rules</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="chessboard-container">
+            <div class="chessboard" id="chessboard"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="content-section">
+        <h2>About Chess</h2>
+        <p>Chess is a strategic board game played between two players. It is played on a square board with 64 squares arranged in an 8×8 grid. Each player begins with 16 pieces: one king, one queen, two rooks, two knights, two bishops, and eight pawns.</p>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="content-section">
+        <h2>Chess Rules</h2>
+        <div class="rules-container">
+            <div class="rule-item">
+                <h3>Basic Setup</h3>
+                <p>The game is played on an 8×8 board with alternating light and dark squares. Each player starts with 16 pieces.</p>
+            </div>
+            <div class="rule-item">
+                <h3>Piece Movement</h3>
+                <ul>
+                    <li><strong>Pawn:</strong> Moves forward one square, captures diagonally</li>
+                    <li><strong>Rook:</strong> Moves horizontally or vertically any number of squares</li>
+                    <li><strong>Knight:</strong> Moves in an L-shape: two squares in one direction and then one square perpendicular</li>
+                    <li><strong>Bishop:</strong> Moves diagonally any number of squares</li>
+                    <li><strong>Queen:</strong> Moves in any direction any number of squares</li>
+                    <li><strong>King:</strong> Moves one square in any direction</li>
+                </ul>
+            </div>
+            <div class="rule-item">
+                <h3>Special Moves</h3>
+                <ul>
+                    <li><strong>Castling:</strong> A move involving the king and either rook</li>
+                    <li><strong>En Passant:</strong> A special pawn capture</li>
+                    <li><strong>Pawn Promotion:</strong> When a pawn reaches the opposite end of the board</li>
+                </ul>
+            </div>
+            <div class="rule-item">
+                <h3>Check and Checkmate</h3>
+                <p>When a king is under attack, it is in check. The game ends when a king is in checkmate (cannot escape check).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript to generate the chessboard
+        document.addEventListener('DOMContentLoaded', function() {
+            const chessboard = document.getElementById('chessboard');
+            
+            for (let row = 0; row < 8; row++) {
+                for (let col = 0; col < 8; col++) {
+                    const square = document.createElement('div');
+                    square.classList.add('chess-square');
+                    
+                    // Alternate colors based on position
+                    if ((row + col) % 2 === 0) {
+                        square.classList.add('white');
+                    } else {
+                        square.classList.add('black');
+                    }
+                    
+                    chessboard.appendChild(square);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
